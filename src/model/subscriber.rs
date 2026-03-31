@@ -1,5 +1,5 @@
 use rocket::serde::{Deserialize, Serialize};
-use rocket::log;
+use log;
 use rocket::serde::json::to_string;
 use rocket::tokio;
 use bambangshop::REQWEST_CLIENT;
@@ -15,7 +15,7 @@ pub struct Subscriber {
 impl Subscriber {
     #[tokio::main]
     pub async fn update(&self, payload: Notification) {
-        REQUEST_CLIENT
+        REQWEST_CLIENT
             .post(&self.url)
             .header("Content-Type", "JSON")
             .body(to_string(&payload).unwrap())
