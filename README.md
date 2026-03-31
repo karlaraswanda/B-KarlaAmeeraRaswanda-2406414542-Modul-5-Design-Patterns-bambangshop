@@ -77,6 +77,7 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
+I learned how data can be grouped using nested ```DashMap``` structures. Each ```product_type``` maps to its own collection of subscribers, enabling efficient lookup and modification. Functions like ```add```, ```list_all```, and ```delete``` encapsulate data operations clearly.
 
 #### Reflection Publisher-2
 
