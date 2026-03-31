@@ -77,7 +77,12 @@ This is the place for you to write reflections:
 ### Mandatory (Publisher) Reflections
 
 #### Reflection Publisher-1
-I learned how data can be grouped using nested ```DashMap``` structures. Each ```product_type``` maps to its own collection of subscribers, enabling efficient lookup and modification. Functions like ```add```, ```list_all```, and ```delete``` encapsulate data operations clearly.
+1. **Interface (trait) >< struct**  
+In this case, the Observer pattern is simplified, so a struct is enough to represent the data. A trait becomes useful only when polymorphism or extensibility is required.
+2. **Vec >< DashMap**  
+Vec is not sufficient because it does not enforce uniqueness and requires O(n) lookup. DashMap is necessary since we need fast insertion, deletion, and lookup by unique keys.
+3. **DashMap >< Singleton**  
+In Rust, thread safety is enforced at the data structure level. Therefore, using DashMap is necessary, while Singleton only addresses instance control, not concurrency.
 
 #### Reflection Publisher-2
 
