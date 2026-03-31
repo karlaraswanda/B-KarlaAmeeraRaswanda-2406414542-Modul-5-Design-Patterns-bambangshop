@@ -85,5 +85,11 @@ Vec is not sufficient because it does not enforce uniqueness and requires O(n) l
 In Rust, thread safety is enforced at the data structure level. Therefore, using DashMap is necessary, while Singleton only addresses instance control, not concurrency.
 
 #### Reflection Publisher-2
+1. **Why separate “Service” and “Repository” from Model?**  
+Separating Service and Repository follows SRP, where Model focuses on data structure, Repository handles data access, and Service manages business logic. It also enables better testability, since Service and Repository can be tested independently.
+2. **What happens if we only use the Model?**  
+If only Model is used, each Model (Program, Subscriber, Notification) must handle both logic and data access, causing high coupling and bloated code. The codebase becomes difficult to extend, because adding new features requires modifying multiple models with mixed responsibilities.
+3. **How Postman helps in testing?**  
+Postman helps by allowing us to send HTTP requests and validate API responses quickly without writing frontend code. Also, I find Collections, Environment variables, and History useful to organize and repeat tests during development.
 
 #### Reflection Publisher-3
