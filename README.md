@@ -93,3 +93,9 @@ If only Model is used, each Model (Program, Subscriber, Notification) must handl
 Postman helps by allowing us to send HTTP requests and validate API responses quickly without writing frontend code. Also, I find Collections, Environment variables, and History useful to organize and repeat tests during development.
 
 #### Reflection Publisher-3
+1. **Which variation of Observer Pattern is used?**  
+This tutorial uses the Push model, where the publisher directly sends notification data to subscribers via HTTP requests. The subscriber does not need to request additional data from the publisher.
+2. **Advantages and disadvantages of using the Pull model** 
+Using the Pull model would reduce data redundancy because subscribers can request only the data they need. However, it introduces additional latency and complexity since subscribers must make extra requests after receiving a notification trigger. 
+3. **Impact of not using multi-threading in notification**  
+If multi-threading is not used, the system becomes less scalable because each notification must complete before the next one starts.
